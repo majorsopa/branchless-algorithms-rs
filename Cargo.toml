@@ -3,4 +3,7 @@ name = "branchless-algorithms"
 version = "0.1.0"
 authors = ["majorsopa"]
 repository = "https://github.com/majorsopa/branchless-algorithms-rs"
-description = "Implementation of various algorithms, without branches. Branches include if else, match, break and similar, and premature return statements."
+description = "Implementation various algorithms, without branches. Branches include if else, match, break and similar, and premature return statements."
+
+[lib]
+doctest = false
