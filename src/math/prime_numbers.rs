@@ -22,6 +22,7 @@ mod tests {
     assert!(is_prime(7));
     assert!(is_prime(11));
     assert!(is_prime(227));
+    assert!(is_prime(353));
 
     assert!(!is_prime(0));
     assert!(!is_prime(1));

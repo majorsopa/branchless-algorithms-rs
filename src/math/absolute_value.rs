@@ -1,4 +1,4 @@
-pub fn absolute_value_i32(a: i32) -> i32 {
+pub fn absolute_value(a: i32) -> i32 {
   let mask = a >> 31;
   (mask ^ a) - mask
 }
@@ -8,8 +8,8 @@ mod tests {
   use super::*;
 
   #[test]
-  fn absolute_value() {
-    assert!(absolute_value_i32(7) == 7);
-    assert!(absolute_value_i32(-3) == 3);
+  fn absolute_value_check() {
+    assert!(absolute_value(7) == 7);
+    assert!(absolute_value(-3) == 3);
   }
 }
