@@ -13,19 +13,37 @@ mod tests {
 
   #[test]
   fn descending() {
-    let mut ve1 = vec![3, 2, 1];
-    bubble_sort(&mut ve1);
-    for i in 1..ve1.len() {
-      assert!(ve1[i - 1] <= ve1[i]);
+    let mut vec = vec![3, 2, 1];
+    bubble_sort(&mut vec);
+    for i in 1..vec.len() {
+      assert!(vec[i - 1] <= vec[i]);
     }
   }
 
   #[test]
   fn ascending() {
-    let mut ve2 = vec![1, 2, 3];
-    bubble_sort(&mut ve2);
-    for i in 1..ve2.len() {
-      assert!(ve2[i - 1] <= ve2[i]);
+    let mut vec = vec![1, 2, 3];
+    bubble_sort(&mut vec);
+    for i in 1..vec.len() {
+      assert!(vec[i - 1] <= vec[i]);
+    }
+  }
+
+  #[test]
+  fn mixed() {
+    let mut vec = vec![2, 1, 3];
+    bubble_sort(&mut vec);
+    for i in 1..vec.len() {
+      assert!(vec[i - 1] <= vec[i]);
+    }
+  }
+
+  #[test]
+  fn duplicates() {
+    let mut vec = vec![2, 2, 3];
+    bubble_sort(&mut vec);
+    for i in 1..vec.len() {
+      assert!(vec[i - 1] <= vec[i]);
     }
   }
 }
