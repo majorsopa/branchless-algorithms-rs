@@ -1,5 +1,4 @@
-pub fn bubble_sort<T: Ord>(arr: &mut [T]) {
-  // small to large
+pub fn bubble_sort(arr: &mut [i32]) {  // small to large
   for i in 0..arr.len() {
     for b in 0..arr.len() - 1 - i {
       arr.swap(b, b + usize::from(arr[b] > arr[b + 1]))
