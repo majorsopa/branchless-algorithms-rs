@@ -1,7 +1,7 @@
 pub fn is_perfect_number(num: usize) -> bool {
   let num_bits = std::mem::size_of::<usize>() * 8;
-  let mut sum = 0;
-  for i in 1..num {
+  let mut sum = 1;
+  for i in 2..num {
     sum += i * (super::check_non_zero_unsigned::check_non_zero_unsigned(num % i) ^ 1);
   }
   (sum ^ num) == 0
