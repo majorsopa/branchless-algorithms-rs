@@ -1,8 +1,8 @@
-pub fn minimum(a: i32, b: i32) -> i32 {
+pub fn minimum(a: isize, b: isize) -> isize {
   (a + b - super::absolute_value::absolute_value(a - b)) / 2
 }
 
-pub fn minimum_of_list(list: &[i32]) -> i32 {
+pub fn minimum_of_list(list: &[isize]) -> isize {
   let mut current_min = list[0];
   for i in 1..list.len() {
     current_min = minimum(current_min, list[i]);

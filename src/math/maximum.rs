@@ -1,8 +1,8 @@
-pub fn maximum(a: i32, b: i32) -> i32 {
+pub fn maximum(a: isize, b: isize) -> isize {
   (a + b + super::absolute_value::absolute_value(a - b)) / 2
 }
 
-pub fn maximum_of_list(list: &[i32]) -> i32 {
+pub fn maximum_of_list(list: &[isize]) -> isize {
   let mut current_max = list[0];
   for i in 1..list.len() {
     current_max = maximum(current_max, list[i]);
@@ -18,6 +18,7 @@ mod tests {
   fn maximum_check() {
     assert!(7 == maximum(7, 3));
     assert!(3 == maximum(-6, 3));
+    assert!(4 == maximum(4, 4));
   }
 
   #[test]
