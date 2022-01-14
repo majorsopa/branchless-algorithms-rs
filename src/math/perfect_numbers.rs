@@ -1,10 +1,8 @@
-pub fn is_perfect_number(num: isize) -> bool {
+pub fn is_perfect_number(num: usize) -> bool {
   let num_bits = std::mem::size_of::<usize>() * 8;
   let mut sum = 0;
   for i in 1..num {
-    let eee = (super::minimum::minimum(num % i, 1) ^ 1) & 1;
-    println!("{},{}", num % i, eee);
-    sum += i * (!(num % i) >> num_bits - 1)
+    sum += i * (super::check_non_zero_unsigned::check_non_zero_unsigned(num % i) ^ 1);
   }
   (sum ^ num) == 0
 }
@@ -24,7 +22,5 @@ mod tests {
     assert!(!is_perfect_number(8));
     assert!(!is_perfect_number(16));
     assert!(!is_perfect_number(88));
-    assert!(!is_perfect_number(-4));
-    assert!(!is_perfect_number(-6));
   }
 }
