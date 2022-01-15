@@ -18,9 +18,25 @@ pub fn less_than_as_one(a: isize, b: isize) -> usize {
   super::zero_checks::check_non_zero_unsigned(less_than(a, b))
 }
 
+// returns one if a == b and zero otherwise
+pub fn equal_to(a: isize, b: isize) -> usize {
+  super::zero_checks::check_zero_unsigned(less_than(a, b) ^ greater_than(a, b))
+}
+
 #[cfg(test)]
 mod tests {
   use super::*;
+
+  #[test]
+  fn check_equal_to() {
+    assert_eq!(1, equal_to(10, 10));
+    assert_eq!(1, equal_to(0, 0));
+    assert_eq!(1, equal_to(100, 100));
+
+    assert_eq!(0, equal_to(100, 99));
+    assert_eq!(0, equal_to(10, 27));
+    assert_eq!(0, equal_to(0, 70));
+  }
 
   #[test]
   fn check_greater_than() {
