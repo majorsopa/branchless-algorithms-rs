@@ -1,10 +1,13 @@
-pub fn selection_sort(arr: &mut [i32]) {
+pub fn selection_sort(arr: &mut [isize]) {
   for i in 0..arr.len() {
     let mut smallest = i;
     for b in (i + 1)..arr.len() {
-      let condition = usize::from(arr[b] < arr[smallest]);
-      let rev_condition = usize::from(!(arr[b] < arr[smallest]));
-      smallest = b * condition + smallest * rev_condition;
+      smallest = {
+        b
+        * crate::math::inequalities::less_than_as_one(arr[b], arr[smallest])
+        + smallest
+        * crate::math::inequalities::greater_than_as_one(arr[b], arr[smallest])
+      }
     }
     arr.swap(smallest, i);
   }
