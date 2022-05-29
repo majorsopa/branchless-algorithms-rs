@@ -14,3 +14,7 @@ criterion = "0.3"
 [[bench]]
 name = "math"
 harness = false
+
+[[bench]]
+name = "sort"
+harness = false

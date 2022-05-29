@@ -4,9 +4,9 @@ pub fn selection_sort(arr: &mut [isize]) {
     for b in (i + 1)..arr.len() {
       smallest = {
         b
-        * crate::math::inequalities::less_than_as_one(arr[b], arr[smallest])
+        * crate::math::less_than_as_one(arr[b], arr[smallest])
         + smallest
-        * crate::math::inequalities::greater_than_as_one(arr[b], arr[smallest])
+        * crate::math::greater_than_as_one(arr[b], arr[smallest])
       }
     }
     arr.swap(smallest, i);
