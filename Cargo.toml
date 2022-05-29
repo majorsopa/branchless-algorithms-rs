@@ -7,3 +7,10 @@ description = "Implementation various algorithms, without branches. Branches inc
 
 [lib]
 doctest = false
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "math"
+harness = false
